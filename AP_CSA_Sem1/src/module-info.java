@@ -4,5 +4,5 @@
 /**
  * 
  */
-module AP_CSA_Sem_1 {
+module AP_CSA_Sem1 {
 }
