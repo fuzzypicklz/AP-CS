@@ -1,4 +1,4 @@
-package GradedLabs;
+package UsefulPractice;
 
 import java.util.Scanner;
 import java.util.Random;
