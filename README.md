@@ -5,5 +5,5 @@
 
 To get started, click the green `code` button then download as zip
 
-if you're cool you can install git and clone the repository using the link under `code` but do NOT try to commit any changes I will reject your PR
+if you're cool you can install git and clone the repository using the link under `<> Code` but do NOT try to commit any changes I will reject your PR
 you can make your own branch if you'd like
