@@ -28,7 +28,7 @@ public class StringManipulation {
 
 
         System.out.println(string1.length());
-        System.out.println(string1.substring(0, (stringh1.length())/2));
+        System.out.println(string1.substring(0, (string1.length())/2));
         System.out.println(string1.substring((string1.length())/2,string1.length()));
         System.out.println(string1.charAt(string1.length()-1));
         System.out.println(string1.charAt(0));
