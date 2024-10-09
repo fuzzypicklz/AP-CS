@@ -18,7 +18,7 @@ public class BankExec {
                         while (true){
                             try {
                                 double amount = Double.parseDouble(input[1]);
-                                Deposit(amount);
+                                b.Withdraw(amount);
                                 break;
                             } catch (NumberFormatException e) {
                                 System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
@@ -36,7 +36,7 @@ public class BankExec {
                         while (true){
                             try {
                                 double amount = Double.parseDouble(input[1]);
-                                Deposit(amount);
+                                b.Deposit(amount);
                                 break;
                             } catch (NumberFormatException e) {
                                 System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
@@ -55,7 +55,7 @@ public class BankExec {
                             int year = Integer.parseInt(input[1]);
                             double rate = Double.parseDouble(input[2]);
                             double period = Double.parseDouble(input[3]);
-                            Interest(year, rate, period);
+                            b.Interest(year, rate, period);
                             break;
                         } catch (NumberFormatException e) {
                             System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
@@ -68,11 +68,11 @@ public class BankExec {
                 }
                 case "balance":
                 case "bal":{
-                    getBalance();
+                    b.getBalance();
                     break;
                 }
                 case "help":{
-                    Catalogue();
+                    b.Catalogue();
                     break;
                 }
                 
