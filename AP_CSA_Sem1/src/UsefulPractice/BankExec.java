@@ -15,14 +15,12 @@ public class BankExec {
                 case "withdraw":
                 case"with":{
                     if(input.length>1){
-                        while (true){
-                            try {
-                                double amount = Double.parseDouble(input[1]);
-                                b.Withdraw(amount);
-                                break;
-                            } catch (NumberFormatException e) {
-                                System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
-                            }
+                        try {
+                            double amount = Double.parseDouble(input[1]);
+                            b.Withdraw(amount);
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
                         }
                     }
                     else{
@@ -33,14 +31,12 @@ public class BankExec {
                 case "deposit":
                 case "dep":{
                     if(input.length>1){
-                        while (true){
-                            try {
-                                double amount = Double.parseDouble(input[1]);
-                                b.Deposit(amount);
-                                break;
-                            } catch (NumberFormatException e) {
-                                System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
-                            }
+                        try {
+                            double amount = Double.parseDouble(input[1]);
+                            b.Deposit(amount);
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println("BankOS v0.1> Invalid amount. Please enter a valid number.");
                         }
                     }
                     else{
