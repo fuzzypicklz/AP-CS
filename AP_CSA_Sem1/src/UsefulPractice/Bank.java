@@ -2,10 +2,9 @@ package UsefulPractice;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.Scanner;
 
 public class Bank {
-    static double balance = 1000.00;
+    static double balance = 0.00;
     
     public static void Deposit(Double x){
         balance += x;
@@ -15,14 +14,14 @@ public class Bank {
     
     public static void Withdraw(Double x){
         if (x>balance) {
-            
+            System.out.println("BankOS v0.1> Insufficient funds (balance is $"+balance+")");
         }
         else{
-            System.out.println("BankOS v0.1> Insufficient funds");
+            balance -= x;
+            System.out.println("BankOS v0.1> Withdrew $"+x);
+            Fee();
         }
-        balance -= x;
-        System.out.println("BankOS v0.1> Withdrew $"+x);
-        Fee();
+        
     }
 
     public static void Interest(int years, double rate, double period){
@@ -30,10 +29,10 @@ public class Bank {
         DecimalFormat df = new DecimalFormat("#.##");
         df.setRoundingMode(RoundingMode.CEILING);
 
-        double grossInterest = balance * Math.pow((1 + rate / period), period * years);
-        grossInterest = Double.parseDouble(df.format(grossInterest));
-        System.out.println("BankOS v0.1> you have accumulated $"+grossInterest+" in interest");
-        balance += grossInterest;
+        double netInterest = balance * Math.pow((1+rate / period), period * years);
+        netInterest = Double.parseDouble(df.format(netInterest));
+        System.out.println("BankOS v0.1> you have accumulated $"+(netInterest-balance)+" in interest");
+        balance = netInterest;
         getBalance();
 
     }
