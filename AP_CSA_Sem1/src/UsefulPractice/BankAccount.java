@@ -2,10 +2,18 @@ package UsefulPractice;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
-public class Bank {
+public class BankAccount {
     static double balance = 0.00;
-    
+    static int ID;
+    static String password;
+    public BankAccount(int id){
+        Scanner s = new Scanner(System.in);
+        System.out.println("BankOS v0.1> Input accnt Password\nBankOS v0.1> ");
+        ID = id;
+        password = s.nextLine();
+    }
     public static void Deposit(Double x){
         balance += x;
         System.out.println("BankOS v0.1> Deposited $"+x);
@@ -21,7 +29,15 @@ public class Bank {
             System.out.println("BankOS v0.1> Withdrew $"+x);
             Fee();
         }
-        
+    }
+    public static void Transfer(Double x, BankAccount target){
+        target.balance+=x;
+        Fee();
+        balance-=x;
+
+        System.out.println("BankOS v0.1> Transfer successful");
+        System.out.println("BankOS v0.1> Target account balance: "+target.balance);
+        getBalance();
     }
 
     public static void Interest(int years, double rate, double period){
@@ -57,7 +73,8 @@ public class Bank {
         System.out.println("withdraw/with <value>\t\t\tWithdraw from account");
         System.out.println("depost/dep <value>\t\t\tDeposit to account");
         System.out.println("balance/bal\t\t\t\tView Balance");
-        System.out.println("interest/int <years> <rate> <period>\tcollect interest over <years> years at <rate> rate compounded every <period> years");
+        System.out.println("interest/int <years> <rate> <period>\tcollect interest over <years> years at <rate> rate compounded <period> times annually");
+        System.out.println("transfer <value> <Target ID> \t\ttransfer $<value> to account <Target ID>");
     }
     public static void getBalance(){
         System.out.println("BankOS v0.1> Your balance: $"+balance);

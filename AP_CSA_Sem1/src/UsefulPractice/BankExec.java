@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class BankExec {
     public static void main(String[] args){
-        Bank b = new Bank();
+        
+        BankAccount b = new BankAccount();
         Scanner s = new Scanner(System.in);
         while(true){
             System.out.print("BankOS v0.1> ");
