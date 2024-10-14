@@ -8,10 +8,9 @@ public class BankAccount {
     static double balance = 0.00;
     static int ID;
     static String password;
-    public BankAccount(int id){
+    public BankAccount(){
         Scanner s = new Scanner(System.in);
-        System.out.println("BankOS v0.1> Input accnt Password\nBankOS v0.1> ");
-        ID = id;
+        System.out.print("BankOS v0.1> Input accnt Password\nBankOS v0.1> ");
         password = s.nextLine();
     }
     public static void Deposit(Double x){
