@@ -1,3 +1,4 @@
+package UsefulPractice.employee;
 public class Address
 {
 private String streetAddress, city, state;
