@@ -111,8 +111,12 @@ public class Account
       return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
    }
    public double transfer(Account tAccount, Double amount){
-        tAccount.deposit(amount);
-        withdraw(amount, 1.25);
-        return getBalance();
+      if(amount+1.25<=getBalance()){
+         withdraw(amount, 1.25);  
+         tAccount.deposit(amount);
+      }
+      
+        
+      return getBalance();
    }
 }
