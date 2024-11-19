@@ -1,15 +1,15 @@
-package GradedLabs;
+package GradedLabs.arraylist;
 import java.util.ArrayList;
-public class arraylist {
-    public static void ArrayListIncrement(ArrayList<String> list){
+public class alist {
+    public static void ArrayListIncrement(ArrayList<contactlist> list){
         list.forEach((n) -> System.out.println(n));
 
         for(int i = 0; i<list.size(); i++){
             System.out.println(list.get(i));
         }
     }
-    public static void ArrayIncrement(String[] list){
-        for (String n : list){
+    public static void ArrayIncrement(contactlist[] list){
+        for (contactlist n : list){
             System.out.println(n);
         }
 
