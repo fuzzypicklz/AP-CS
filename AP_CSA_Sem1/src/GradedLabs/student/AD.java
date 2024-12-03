@@ -1,6 +1,6 @@
 package GradedLabs.student;
 
-public class ArrayDriver {
+public class AD {
     public static void main(String[] args){
         Student1[] students = new Student1[3];
         students[0] = new Student1("billy", "joe");
