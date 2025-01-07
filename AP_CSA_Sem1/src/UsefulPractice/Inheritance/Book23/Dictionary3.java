@@ -6,7 +6,7 @@ public class Dictionary3 extends Book2
     private int pics;
    public Dictionary3 (int numPages, int numDefinitions, int numPics)
    {
-      super (numPages);
+      super (numPages); // !!!!!!!!
         pics = numPics;
       definitions = numDefinitions;
 
@@ -23,5 +23,9 @@ public class Dictionary3 extends Book2
     System.out.println("number of pictures: " + pics);
 
       System.out.println("pics per page: "+pics/pages);
+   }
+
+   public void pageMessage(){
+    super.pageMessage();
    }
 }
