@@ -1,53 +1,47 @@
 package UsefulPractice.Inheritance.Animals;
 
-public class Animal
-{
+public class Animal {
 
-private static boolean vegetarian=false;
-private static String eats;
-private static int noOfLegs;
-public Animal(boolean veg, String food, int legs)
-{
-this.vegetarian = veg;
-this.eats = food;
-this.noOfLegs = legs;
-}
+    private static boolean vegetarian = false;
+    private static String eats;
+    private static int noOfLegs;
 
-public static boolean isVegetarian()
-{
-return vegetarian;
-}
+    public Animal(boolean veg, String food, int legs) {
+        this.vegetarian = veg;
+        this.eats = food;
+        this.noOfLegs = legs;
+    }
 
-public void setVegetarian(boolean vegetarian)
-{
-this.vegetarian = vegetarian;
-}
+    public static boolean isVegetarian() {
+        return vegetarian;
+    }
 
-public static String getEats()
-{
-return eats;
-}
+    public void setVegetarian(boolean vegetarian) {
+        this.vegetarian = vegetarian;
+    }
 
-public void setEats(String eats)
-{
-this.eats = eats;
-}
+    public static String getEats() {
+        return eats;
+    }
 
-public static int getNoOfLegs() {
-return noOfLegs;
-}
+    public void setEats(String eats) {
+        this.eats = eats;
+    }
 
-public void setNoOfLegs(int noOfLegs) {
-this.noOfLegs = noOfLegs;
-}
+    public static int getNoOfLegs() {
+        return noOfLegs;
+    }
 
-public String toString()
-{
-String result="";
-result +=vegetarian;
-result +=eats;
-result +=noOfLegs;
+    public void setNoOfLegs(int noOfLegs) {
+        this.noOfLegs = noOfLegs;
+    }
 
-return result;
-}
+    public String toString() {
+        String result = "";
+        result += vegetarian;
+        result += eats;
+        result += noOfLegs;
+        return result;
+    }
+
 }

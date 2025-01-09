@@ -1,4 +1,4 @@
-package GradedLabs.Transfer;
+package GradedLabs.bankTransfer;
 
 //twieth.com/compsci/source/chap04/Account.java
 //********************************************************************

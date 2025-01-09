@@ -1,4 +1,4 @@
-package GradedLabs.Transfer;
+package GradedLabs.bankTransfer;
 
 public class Transfer {
     public static void main(String[] args){
