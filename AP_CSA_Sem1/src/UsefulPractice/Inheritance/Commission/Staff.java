@@ -1,5 +1,5 @@
 package UsefulPractice.Inheritance.Commission;
-
+import java.util.ArrayList;
 //********************************************************************
 //  Staff.java       Author: Lewis/Loftus/Cocking
 //
@@ -16,7 +16,7 @@ public class Staff
    public Staff ()
    {
       staffList = new StaffMember[6];
-
+      Staff3 personnel = new Staff3();
       staffList[0] = new Executive ("Elliot", "123 Main Line",
          "555-0469", "123-45-6789", 2423.07);
 
@@ -32,6 +32,9 @@ public class Staff
          "555-8374");
       staffList[5] = new Volunteer ("Carla", "321 Duds Lane",
          "555-7282");
+
+      staffList[6] = new Commission("Boris Johnson", "223 yeltsin drive", "694203","524-87-7342", 20, .20);
+      ((Hourly)staffList[6]).addHours(40);
 
       ((Executive)staffList[0]).awardBonus (500.00);
 

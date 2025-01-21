@@ -15,4 +15,18 @@ public class Commission extends Hourly{
     public double paycom(){
         return totalSales * commissionRate;
     }
+    public double pay(){
+        double payment = super.pay() + totalSales * commissionRate;
+        totalSales = 0;
+        return payment;
+    }
+    public String toString(){
+        return super.toString() + 
+        "\npayRate per hour: "+super.getPayRate()+
+        "\n Total HoursPaid "+super.pay()+
+        "\ntotal sales: "+totalSales +
+        "\nCommission: "+commissionRate+
+        "\nTotal Commission: "+paycom()+
+        "\nTotal Hrs and commission: "+pay();
+    }
 }
