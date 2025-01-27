@@ -11,3 +11,5 @@ if you're cool you can install git and clone the repository using the link under
 ## IF YOU FIND THAT ANYTHING IS MISSING FROM HERE (I.E. he changes the curriculum) please notify me to make a Pull request
 
 you can make your own branch and push to that if you'd like
+
+Over the summer, I plan on documenting all of this code and making helpful comments/tips within the files, as well as normalizing the naming conventions
