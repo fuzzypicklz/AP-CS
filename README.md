@@ -7,7 +7,8 @@ also please please please just use this as answer key and actually do the projec
 
 To get started, click the green `<> Code` button then download as zip
 
-# IF MR TWIET CONRONTS YOU AND ASKS IF THE CODE IS YOURS if you didn't change the code that much, ADMIT THAT YOU GOT HELP and credit me, Daniel W. This will keep you out of trouble.
+# IF MR TWIET CONRONTS YOU AND ASKS IF THE CODE IS YOURS
+and you didn't change the code that much, ADMIT THAT YOU GOT HELP and credit me, Daniel W. This will keep you out of trouble.
 
 if you're cool you can install git and clone the repository using the link under `<> Code` but do NOT try to commit any changes to main I will reject your PR
 ## IF YOU FIND THAT ANYTHING IS MISSING FROM HERE (I.E. he changes the curriculum) please notify me to make a Pull request
