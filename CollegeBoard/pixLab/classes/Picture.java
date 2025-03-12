@@ -202,7 +202,7 @@ public class Picture extends SimplePicture
 	    int height = pixels.length;
 	    for (int col = 0; col < pixels.length; col++)
 	    {
-	      for (int row = 0; row < height / 2; col++)
+	      for (int row = 0; row < pixels[0].length / 2; row++)
 	      {
 	        leftPixel = pixels[row][col];
 	        rightPixel = pixels[row][height - 1 - col];
@@ -228,6 +228,18 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     } 
+  }
+  public void mirrorDiag(){  
+    Pixel[][] pixels = this.getPixels2D();  
+    Pixel topPixel = null;  
+    Pixel botPixel = null;  
+    for (int row = 0; row < pixels[0].length && row < pixels.length; row++)  {
+      for (int col = row + 1; col < pixels[0].length && col < pixels.length; col++)    {     
+        topPixel = pixels[row][col];      
+        botPixel = pixels[col][row];      
+        topPixel.setColor(botPixel.getColor());    
+      }  
+    }
   }
   
   /** Mirror just part of a picture of a temple */
@@ -288,18 +300,29 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/flower1.jpg");
+    Picture flower2 = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/flower2.jpg");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
     this.copy(flower1,200,0);
-    Picture flowerNoBlue = new Picture(flower2);
-    flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
     this.mirrorVertical();
-    this.write("collage.jpg");
+
+    this.copy(flower1,300,0);
+    this.copy(flower2,400,0);
+    this.mirrorVertical();
+
+
+    this.copy(flower2,0,100);
+    this.copy(flower1,0,200);
+    this.copy(flower2,0,300);
+    this.copy(flower1,0,400);
+
+    this.copy(flower2,400,100);
+    this.copy(flower1,400,200);
+    this.copy(flower2,400,300);
+    this.copy(flower1,400,400);
+    
+    this.write("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/collage.jpg");
   }
   
   
@@ -329,7 +352,64 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void flip() {
+	  Pixel[][] pixels = this.getPixels2D();
+	    Pixel topPixel = null;
+	    Pixel bottomPixel = null;
+	    for (int col = 104; col < 307; col++)
+	    {
+	      for (int row = 163; row < 196; row++)
+	      {
+	        topPixel = pixels[row][col];
+	        bottomPixel = pixels[196 - (row - 196)][col];
+	        bottomPixel.setColor(topPixel.getColor());
+	      }
+	    }
+  }
+
+  public void newCollage()
+  {
+    Picture flower1 = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/flower1.jpg");
+    Picture flower2 = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/flower2.jpg");
+    this.copy(flower2,0,100);
+    this.copy(flower1,0,200);
+    this.copy(flower2,0,300);
+    this.copy(flower1,0,400);
+    this.copy(flower2,0,500);
+    this.mirrorHorizon();
+
+    this.write("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/collage.jpg");
+  }
+    public void newCollage2()
+    {
+        Picture flower1 = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/flower2.jpg");
+    Picture flower2 = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/flower2.jpg");
+        this.copy(flower1,0,0);
+    this.copy(flower2,100,0);
+    this.copy(flower1,200,0);
+    this.copy(flower2,300,0);
+    this.copy(flower1,400,0);
+    this.copy(flower2,500,0);
+    this.mirrorVertical();
+    }
   
+    public void chromaKey(Picture background) {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel[][] bgPixels = background.getPixels2D();
+  
+      for (int row = 0; row < pixels.length; row++) {
+          for (int col = 0; col < pixels[0].length; col++) {
+              Pixel pixel = pixels[row][col];
+
+              // Check if the pixel is pure blue
+              if (pixel.getBlue() >= 10 && pixel.getRed()<=25) {
+                  // Replace with the corresponding background pixel
+                  pixel.setColor(bgPixels[row % bgPixels.length][col % bgPixels[0].length].getColor());
+              }
+          }
+      }
+
+  }
   /* Main method for testing - each class in Java can have a main 
    * method 
    */

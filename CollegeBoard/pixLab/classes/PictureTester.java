@@ -47,8 +47,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
-    caterpillar.explore();
+    Picture caterpillar = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/caterpillar.jpg");
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
@@ -60,10 +59,21 @@ public class PictureTester
 	    beach.explore();
 	  
   }
+  public static void testZeroGreen(){
+	  Picture beach = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/beach.jpg");
+	  beach.explore();
+	    beach.zeroGreen();
+	    beach.explore();
+  }
+  public static void testZeroRed(){
+	  Picture beach = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/beach.jpg");
+	  beach.explore();
+	    beach.zeroRed();
+	    beach.explore();
+  }
   public static void testMirrorhorizon()
   {
-    Picture caterpillar = new Picture("caterpillar.jpg");
-    caterpillar.explore();
+    Picture caterpillar = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/beach.jpg");
     caterpillar.mirrorHorizon();
     caterpillar.explore();
   }
@@ -71,7 +81,7 @@ public class PictureTester
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -92,7 +102,37 @@ public class PictureTester
     swan.edgeDetection(30);
     swan.explore();
   }
+  public static void testMirrorSnowman() {
+	  Picture snow = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/snowman.jpg");
+	    snow.flip();
+	    snow.explore();
+  }
   
+  public static void testGrayscale() {
+	  Picture beach = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/beach.jpg");
+	    beach.explore();
+	    beach.grayScale();
+	    beach.explore();
+  }
+
+  public static void collage1() {
+	  Picture pic = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/640x480.jpg");
+    pic.createCollage();
+    pic.explore();
+
+  }
+  public static void testMirrorDiag(){
+    Picture snow = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/snowman.jpg");
+	    snow.mirrorDiag();
+	    snow.explore();
+  }
+  public static void testChromakey(){
+    Picture moon = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/moon-surface.jpg");
+    Picture guy = new Picture("C:/Users/gronk/OneDrive/Desktop/AP-CS/CollegeBoard/pixLab/images/blue-mark.jpg");
+    guy.explore();
+    guy.chromaKey(moon);
+    guy.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -100,23 +140,34 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+	//
+	/*
     testZeroBlue();
+    testZeroGreen();
+    testZeroRed();
     testKeepOnlyBlue();
     testKeepOnlyRed();
     testKeepOnlyGreen();
     testNegate();
-    testNegate();
+    testGrayscale();
     testWaterRemove();
-    //testMirrorVertical();
-    //testMirrorTemple();
-    //testMirrorArms();
+    testEdgeDetection();
+    testGrayscale();
+    testMirrorVertical();
+    testMirrorTemple();
+    testMirrorSnowman();*//*
+    collage1();
+    testMirrorSnowman();
+    testMirrorVertical();
+    testMirrorhorizon();
+    testMirrorDiag();*/
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    testEdgeDetection();
+    
     //testEdgeDetection2();
-    //testChromakey();
+    testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
